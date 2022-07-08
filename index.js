@@ -15,28 +15,29 @@ const diffFiles = (file1, file2) => {
   const keys2 = Object.keys(file2);
   const allKeys = _.sortBy(_.uniq(keys1.concat(keys2)));
 
-  const result = allKeys.reduce((acc, key) => {
+  const createDiff = allKeys.reduce((acc, key) => {
     const file1Value = file1[key];
     const file2Value = file2[key];
     if (file2Value === undefined) {
-      acc.push(`  - ${key}: ${file1Value} \n`);
+      acc.push(`  - ${key}: ${file1Value}\n`);
       return acc;
     }
     if (file1Value === undefined) {
-      acc.push(`  + ${key}: ${file2Value} \n`);
+      acc.push(`  + ${key}: ${file2Value}\n`);
       return acc;
     }
     if (file1Value === file2Value) {
-      acc.push(`    ${key}: ${file1Value} \n`);
+      acc.push(`    ${key}: ${file1Value}\n`);
       return acc;
     }
-    acc.push(`  - ${key}: ${file1Value} \n`);
-    acc.push(`  + ${key}: ${file2Value}  \n`);
+    acc.push(`  - ${key}: ${file1Value}\n`);
+    acc.push(`  + ${key}: ${file2Value}\n`);
     return acc;
   }, []);
-  result.unshift('{ \n');
-  result.push('} \n');
-  return result.join('');
+  createDiff.unshift('{\n');
+  createDiff.push('}\n');
+  const result = createDiff.join('');
+  return result;
 };
 
 const gendiff = (filepath1, filepath2) => {

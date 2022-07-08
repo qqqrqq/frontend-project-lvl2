@@ -1,0 +1,13 @@
+name: myactionbuild
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: install-deps
+        run: install-deps
+      - name: run linter
+        run: make lint
+      - name: run tests
+        run: make test
+      
