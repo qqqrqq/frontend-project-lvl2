@@ -1,7 +1,7 @@
 install-deps: 
 	npm ci
 test:
-	npx jest
+	npm test
 test-watch:
 	npx jest --watch
 lint: 
