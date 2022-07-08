@@ -19,7 +19,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
       - name: install-deps
-        run: install-deps
+        run: make install-deps
       - name: run linter
         run: make lint
       - name: run tests
