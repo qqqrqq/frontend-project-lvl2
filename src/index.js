@@ -2,11 +2,14 @@
 import { readFileSync } from 'fs';
 import path from 'path';
 import _ from 'lodash';
+import parse from './parses.js';
 
 const readFile = (filepath) => {
+  const format = path.extname(filepath);
+  console.log(format);
   const getPath = path.resolve(process.cwd(), filepath);
   const getFile = readFileSync(getPath);
-  const parseFile = JSON.parse(getFile);
+  const parseFile = parse(getFile, format);
   return parseFile;
 };
 
