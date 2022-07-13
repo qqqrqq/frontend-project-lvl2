@@ -16,7 +16,7 @@
 npm link , make install-deps
 ```
 
-Хелпер gendiff -h
+Справка gendiff -h
 ```
 Usage: gendiff [options] <filepath1> <filepath2>
 
