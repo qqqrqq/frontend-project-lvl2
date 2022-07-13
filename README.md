@@ -12,12 +12,12 @@
 - Генерация отчета в виде plain text, stylish и json
 
 Установка:
-...
+```
 npm link , make install-deps
-...
+```
 
 Хелпер gendiff -h
-...
+```
 Usage: gendiff [options] <filepath1> <filepath2>
 
 Compares two configuration files and shows a difference
@@ -26,12 +26,12 @@ Options:
   -V, --version        output the version number
   -f, --format <type>  output format (default: "stylish")
   -h, --help           display help for command
-...
+```
 
 Тесты 
-...
+```
 make test
-...
+```
 
 Примеры:
 
