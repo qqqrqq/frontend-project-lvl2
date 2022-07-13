@@ -3,12 +3,10 @@
   "version": "1.0.0",
   "description": "[![Actions Status](https://github.com/qqqrqq/frontend-project-lvl2/workflows/hexlet-check/badge.svg)](https://github.com/qqqrqq/frontend-project-lvl2/actions)",
   "main": "src/index.js",
+  "bin": "bin/gendiff.js",
   "type": "module",
   "scripts": {
     "test": "npx jest"
-  },
-  "bin": {
-    "bin": "bin/gendiff.js"
   },
   "repository": {
     "type": "git",
