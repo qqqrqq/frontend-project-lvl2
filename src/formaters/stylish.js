@@ -16,35 +16,28 @@ const stringify = (date, newDepth) => {
 };
 
 const stylish = (tree) => {
-  const iter = (newTree, depth) => newTree.reduce((acc, node) => {
+  const iter = (newTree, depth) => newTree.map((node) => {
     const makeString = (value, sign) => `${space(depth)}${sign} ${node.name}: ${stringify(value, depth)}\n`;
     if (`${node.type}` === 'deleted') {
-      acc.push(makeString(node.value, '-'));
-      return acc;
+      return makeString(node.value, '-');
     }
     if (`${node.type}` === 'added') {
-      acc.push(makeString(node.value, '+'));
-      return acc;
+      return makeString(node.value, '+');
     }
     if (`${node.type}` === 'unchanged') {
-      acc.push(makeString(node.value, ' '));
-      return acc;
+      return makeString(node.value, ' ');
     }
     if (`${node.type}` === 'changed') {
-      acc.push(makeString(node.value1, '-'));
-      acc.push(makeString(node.value2, '+'));
-      return acc;
+      return `${makeString(node.value1, '-')}${makeString(node.value2, '+')}`;
     }
     if (`${node.type}` === 'nested') {
-      acc.push(`${space(depth)}  ${node.name}: {\n${iter(node.children, depth + 1).join('')}${space(depth)}  }\n`);
-      return acc;
+      return `${space(depth)}  ${node.name}: {\n${iter(node.children, depth + 1).join('')}${space(depth)}  }\n`;
     }
-    return acc;
-  }, []);
-  const result = iter(tree, 1);
-  result.unshift('{\n');
-  result.push('}');
-  return result.join('');
+    return node;
+  });
+  const resultArr = iter(tree, 1);
+
+  return `{\n${resultArr.join('')}}`;
 };
 
 export default stylish;
