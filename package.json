@@ -8,7 +8,7 @@
     "test": "npx jest"
   },
   "bin": {
-    "bin/gendiff.js": "bin/gendiff.js"
+    "bin": "bin/gendiff.js"
   },
   "repository": {
     "type": "git",
