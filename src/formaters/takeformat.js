@@ -1,11 +1,12 @@
+import plain from './plain.js';
 import stylish from './stylish.js';
 
 export default (tree, format) => {
   switch (format) {
     case 'stylish':
       return stylish(tree);
-    case 'test':
-      return console.log('zaebis');
+    case 'plain':
+      return plain(tree);
     default:
       throw new Error(`Формат не поддерживается: ${format}`);
   }
