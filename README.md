@@ -35,16 +35,16 @@ make test
 
 Примеры:
 
-Проверка JSON файлов (формат по-умолчанию 'stylish') \n
+Проверка JSON файлов (формат по-умолчанию 'stylish')                      :
 ![jsongendiff](https://user-images.githubusercontent.com/107568622/178847921-48fcd792-9caa-44d5-abc6-f42f06570b70.gif)
 
-Проверка YML файлов (формат по-умолчанию 'stylish') \n
+Проверка YML файлов (формат по-умолчанию 'stylish')                       :
 ![ymlgif](https://user-images.githubusercontent.com/107568622/178847949-23039ceb-8bc6-4bbe-8832-7434dd386989.gif)
 
-Проверка файлов в формате в plain \n
+Проверка файлов в формате в plain                                         :
 ![plainformat](https://user-images.githubusercontent.com/107568622/178847974-58cd9e0c-8683-42d1-ab6b-bd8ac9b01844.gif)
 
-Вывод в JSON \n
+Вывод в JSON                                                              :
 ![jsonoutput](https://user-images.githubusercontent.com/107568622/178848039-c1701ed4-42e0-4e73-9caf-181786f6c765.gif)
 
 
